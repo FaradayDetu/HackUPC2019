@@ -60,20 +60,14 @@ write.csv(num_vehicles_features, 'mckinsey/numeric_v1.csv', row.names = F)
 
 # We aggregate vehicles via pasting. 
 # It is fundamental to arrange by vehicle type
-vehicles %>% 
-  arrange(Vehicle_Type) %>% 
-  group_by(accident_id) %>% 
-  summarise(vehicles = paste0(Vehicle_Type, collapse = '|')) %>% 
-  write.csv('mckinsey/categorical_v2.csv', row.names = F)
-
-# We created motorcycle features
+# We also created motorcycle features
 vehicles %>% 
   arrange(Vehicle_Type) %>% 
   group_by(accident_id) %>% 
   summarise(vehicles = paste0(Vehicle_Type, collapse = '|')) %>% 
   mutate(lower_vehicle = tolower(vehicles),
          moto_in_accident = as.integer(grepl('moto', lower_vehicle))) %>% 
-  write.csv('mckinsey/categorical_v2-1.csv', row.names = F)
+  write.csv('mckinsey/categorical_v2.csv', row.names = F)
 
 # Same with point of impact and manouver
 vehicles %>% 
