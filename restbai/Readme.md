@@ -10,11 +10,11 @@ The model is a Gradient Boosting that has been trained by a dataset of prices an
 
 It also contains a Python notebook that contains the main algorithm that can be divided into:
 
--Loading scrapped dataset
--Analyze images through Restb.ai API
--Construct training table
--Crossvalidate and validate the XGB model
--Predict a given image.
+- Loading scrapped dataset
+- Analyze images through Restb.ai API
+- Construct training table
+- Crossvalidate and validate the XGB model
+- Predict a given image.
 
 Improvements of the model:
 -Scrap more than one image of each Airbnb (difficult task) so as to have better features and information about the kitchen and the bathroom, so as to use the conditions APIs of Restb.ai
